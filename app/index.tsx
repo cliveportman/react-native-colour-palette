@@ -1,27 +1,27 @@
-import React from 'react';
+import React from "react";
 
-import { View, SafeAreaView, StyleSheet, Image, Pressable } from 'react-native';
-import { Link } from 'expo-router';
+import { View, SafeAreaView, StyleSheet, Image, Pressable } from "react-native";
+import { Link } from "expo-router";
 
-import tailwindColours from '../assets/tailwind-colours';
-import ColouredBox from '../components/ColouredBox';
+import tailwindColours from "../assets/tailwind-colours";
+import ColouredBox from "../components/ColouredBox";
 
 export default function Page() {
   return (
     <SafeAreaView style={[styles.safe]}>
       <View style={styles.container}>
-        <Link href="/tailwind-colours" asChild style={[styles.box, { marginBottom: 10}]}>
-          <Pressable>
+        <Link href="/tailwind-colours" asChild style={{ marginBottom: 10 }}>
+          <Pressable style={styles.box}>
             <Image
-                source={require('../assets/tailwindcss-logo.png')}
-                style={{ width: 198, height: 25 }}
-              />     
+              source={require("../assets/tailwindcss-logo.png")}
+              style={{ width: 198, height: 25 }}
+            />
           </Pressable>
         </Link>
-        <Link href="/brand-colours" asChild style={[styles.box]}>
-          <Pressable>          
+        <Link href="/brand-colours" asChild>
+          <Pressable style={styles.box}>
             <Image
-              source={require('../assets/mw-logo.png')}
+              source={require("../assets/mw-logo.png")}
               style={{ width: 158, height: 75 }}
             />
           </Pressable>
@@ -29,7 +29,7 @@ export default function Page() {
       </View>
     </SafeAreaView>
   );
-};
+}
 
 const styles = StyleSheet.create({
   safe: {
@@ -37,26 +37,17 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    flexDirection: 'column',
-    justifyContent: 'center',
+    flexDirection: "column",
+    justifyContent: "center",
     margin: 10,
-  },
-  text: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-
-  heading: {
-    fontSize: 24,
-    marginBottom: 10,
   },
 
   box: {
     flex: 0.5,
-    backgroundColor: 'white',
+    backgroundColor: "white",
     borderRadius: 3,
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }
+    flexDirection: "row",
+    justifyContent: "center",
+    alignItems: "center",
+  },
 });
