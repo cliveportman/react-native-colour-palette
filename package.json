@@ -8,9 +8,9 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "prettier": "prettier --write 'assets/**/*.{js,jsx,ts,tsx}' 'components/**/*.{js,jsx,ts,tsx}' 'app/**/*.{js,jsx,ts,tsx}'"
-  
   },
   "dependencies": {
+    "@expo/vector-icons": "^13.0.0",
     "@types/react": "~18.2.45",
     "expo": "~50.0.3",
     "expo-constants": "~15.4.5",

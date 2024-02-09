@@ -28,12 +28,6 @@ export default function Layout() {
               headerShown: false,
             }}
           />
-          <Tabs.Screen
-            name="palettes/[slug]"
-            options={{
-              href: null,
-            }}
-          />
         </Tabs>
       </SafeAreaView>
     </>

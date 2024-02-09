@@ -1,9 +1,9 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { View, Text, SafeAreaView, StyleSheet } from "react-native";
-import { useLocalSearchParams, Tabs } from "expo-router";
+import { useLocalSearchParams, Tabs, Link } from "expo-router";
 
 import ColourPallete from "../../../components/ColourPallete";
-import { Link } from "expo-router";
+import { MaterialIcons } from "@expo/vector-icons";
 
 export default function Page() {
   const { slug } = useLocalSearchParams();
@@ -43,9 +43,13 @@ export default function Page() {
   return (
     <SafeAreaView style={[styles.safe]}>
       <Tabs.Screen options={{ headerShown: false }} />
-      <Link href="/modal">Present modal</Link>
-      <View style={styles.container}>
+      <View style={styles.header}>
         <Text style={[styles.text, styles.heading]}>{slug} colours</Text>
+        <Link href="/modal">
+          <MaterialIcons name="settings" size={30} color="black" />
+        </Link>
+      </View>
+      <View style={styles.container}>
         <ColourPallete
           colours={colours}
           isRefreshing={isRefreshing}
@@ -61,6 +65,12 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     justifyContent: "flex-start",
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    padding: 10,
   },
   container: {
     flex: 1,
