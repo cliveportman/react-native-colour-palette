@@ -22,31 +22,16 @@ export default function Layout() {
             }}
           />
           <Tabs.Screen
-            name="tailwind-colours"
+            name="(app)"
             options={{
+              href: null,
               headerShown: false,
-              tabBarLabel: "Tailwind colours",
-              tabBarShowLabel: false,
-              tabBarIcon: ({ focused }) => (
-                <Image
-                  source={require("../assets/tailwind-icon-grey.png")}
-                  style={{ width: 25, height: 25, opacity: focused ? 1 : 0.25 }}
-                />
-              ),
             }}
           />
           <Tabs.Screen
-            name="brand-colours"
+            name="palettes/[slug]"
             options={{
-              headerShown: false,
-              tabBarLabel: "Brand colours",
-              tabBarShowLabel: false,
-              tabBarIcon: ({ focused }) => (
-                <Image
-                  source={require("../assets/mw-icon-grey.png")}
-                  style={{ width: 40, height: 25, opacity: focused ? 1 : 0.25 }}
-                />
-              ),
+              href: null,
             }}
           />
         </Tabs>

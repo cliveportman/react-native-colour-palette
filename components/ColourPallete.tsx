@@ -1,9 +1,13 @@
 import React from "react";
 
 import { View, Text, StyleSheet, SectionList } from "react-native";
-import ColouredBox from "../components/ColouredBox";
+import ColouredBox from "./ColouredBox";
 
-export default function ColourPallete({ colours }) {
+export default function ColourPallete({
+  colours,
+  isRefreshing,
+  refreshFunction,
+}) {
   return (
     <SectionList
       sections={colours}
@@ -13,6 +17,10 @@ export default function ColourPallete({ colours }) {
         <Text style={[styles.text]}>{title}</Text>
       )}
       SectionSeparatorComponent={() => <View style={{ height: 10 }} />}
+      refreshing={isRefreshing}
+      onRefresh={() => {
+        refreshFunction();
+      }}
     />
   );
 }

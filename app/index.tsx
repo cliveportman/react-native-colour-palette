@@ -3,14 +3,16 @@ import React from "react";
 import { View, SafeAreaView, StyleSheet, Image, Pressable } from "react-native";
 import { Link } from "expo-router";
 
-import tailwindColours from "../assets/tailwind-colours";
-import ColouredBox from "../components/ColouredBox";
-
 export default function Page() {
   return (
     <SafeAreaView style={[styles.safe]}>
       <View style={styles.container}>
-        <Link href="/tailwind-colours" asChild style={{ marginBottom: 10 }}>
+        <Link
+          href="/palettes/tailwind"
+          asChild
+          style={{ marginBottom: 10 }}
+          key={1}
+        >
           <Pressable style={styles.box}>
             <Image
               source={require("../assets/tailwindcss-logo.png")}
@@ -18,7 +20,7 @@ export default function Page() {
             />
           </Pressable>
         </Link>
-        <Link href="/brand-colours" asChild>
+        <Link href="/palettes/mobilityways" asChild key={2}>
           <Pressable style={styles.box}>
             <Image
               source={require("../assets/mw-logo.png")}
