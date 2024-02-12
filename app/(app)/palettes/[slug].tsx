@@ -38,6 +38,11 @@ export default function Page() {
   useEffect(() => {
     setIsRefreshing(true);
     fetchColours();
+
+    /** @explainer This is called when the route unmounts, which only happens when the route is replaced by another route using the same dynamic route. */
+    return () => {
+      setColours([]);
+    };
   }, [slug]);
 
   return (
